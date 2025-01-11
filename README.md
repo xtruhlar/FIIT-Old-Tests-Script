@@ -6,6 +6,8 @@ This script will help you prepare yourself to IAU final exam.
 git clone https://github.com/xtruhlar/IAU-Old-Tests-Script.git
 cd IAU-Old-Tests-Script
 python3 script.py
+or
+python script.py
 ```
 
 ## Usage:
