@@ -1,6 +1,8 @@
 # IAU Exam
 This script will help you prepare yourself to IAU final exam.
 
+<img src="https://github.com/xtruhlar/IAU-Old-Tests-Script/blob/main/Bez%20názvu.gif" width="450" alt="IAU Exam GIF">
+
 ## Instalation
 ```bash
 git clone https://github.com/xtruhlar/IAU-Old-Tests-Script.git
