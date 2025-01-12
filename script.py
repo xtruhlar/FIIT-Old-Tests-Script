@@ -82,11 +82,14 @@ def main():
     questions = split_questions(text)
     correct_answers = get_answers(answers_text)
 
-    mode = input("Select mode\n1: Sequential, \n2: Random, \n3: 30 Questions Test \nMode:")
+    mode = input("Select mode\n1: Sequential, \n2: Random, \n3: 30 Questions Test \n4: Starting with...\nMode:")
     if mode == '2':
         random.shuffle(questions)
     elif mode == '3':
         questions = random.sample(questions, 30)
+    elif mode == '4':
+        start = int(input("Start from question: "))
+        questions = questions[start-1:start+35]
 
     test_user(questions, correct_answers)
 

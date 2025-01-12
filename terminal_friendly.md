@@ -242,7 +242,7 @@
 40. Vyberte správnu možnosť:
 	y_true = [0, 1, 0, 0, 1, 1, 0, 1, 0, 1]
 	y_pred = [0, 0, 0, 0, 0, 1, 0, 1, 1, 1]
-	Calculate (TN, FP, FN, TN)
+	Calculate (TN, FP, FN, TP)
 	a) (1,2,3,4)
 	b) another value
 	c) (4,1,2,3)
@@ -328,7 +328,7 @@
 	a) index key_A vA key_B vB | 0 k0 a0 k0 b0
 	b) index key_A vA key_B vB | 0 k0 a1 k0 b0
 	c) index key_A vA key_B vB | 0 k1 a1 k1 a1
-	d) index key_A vA key_B vB | 1 k1 a1 NaN NaN
+	d) index key_A vA key_B vB | 0 k0 a0 k0 b0 1 k1 a1 NaN NaN
 	
 52.  Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
@@ -679,7 +679,7 @@
 	c) connection with new data
 	d) plots, graphs, summary statistics 
 	
-103. Join the pairs. (skewness > 0 / skewness = 0 / skewness < 0) - a) znamienko 0
+103. Join the pairs. (skewness > 0 / skewness = 0 / skewness < 0) - a) znamienko 0, b) znamienko 0, ... 
 	a) normally distributed
 	b) more weight in the right tail of the distribution
 	c) more weight in the left tail of the distribution
