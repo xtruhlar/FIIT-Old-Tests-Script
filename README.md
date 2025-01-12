@@ -48,3 +48,5 @@ If multiple answers are correct, you have to type all of them to get full points
 	f) Latent Semantic Analysis (LSA)
 ```
 If you have to connect term and option, either the `(`, `)` will guide you, or there is NOTE in the question, that is saying how is the correct answer structured. In this example it is `SVD: , Distributional Semantics:`. Answer: SVD: a) d) f), Distributional Semantics: b) c) e)
+
+DISCLAIMER: There might be typos or errors in the answers. If you find some, let me know in [Issues](https://github.com/xtruhlar/IAU-Old-Tests-Script/issues) section.
