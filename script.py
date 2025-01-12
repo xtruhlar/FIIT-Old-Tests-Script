@@ -74,8 +74,15 @@ def test_user(questions, correct_answers):
 
 def main():
     os.system('clear')
-    file = 'terminal_friendly.md'
-    file2 = 'IAU Odpovede.md'
+    # Select Course (PIB, IAU)
+    course = input("Select course\n1: PIB, \n2: IAU\nCourse:")
+    if course == '1':
+        file = 'PIB_Qs.md'
+        file2 = 'PIB_answers.md'
+    elif course == '2':
+        file = 'terminal_friendly.md'
+        file2 = 'IAU Odpovede.md'
+
     text = load_file(file)
     answers_text = load_file(file2)
 
