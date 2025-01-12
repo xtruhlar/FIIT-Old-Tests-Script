@@ -17,6 +17,7 @@ Select mode:
 - 1: Sequential (Question 1 to 170)
 - 2: Random (All question but shuffled)
 - 3: 30 Questions Test (Random 30 questions)
+- 4: Select where you want to start (if you want to split questions for different days)
 
 Question will guide you how to answer:
 ### Type 1:
