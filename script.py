@@ -74,7 +74,7 @@ def test_user(questions, correct_answers):
 
 def main():
     os.system('clear')
-    file = 'Staré skúšky.md'
+    file = 'terminal_friendly.md'
     file2 = 'IAU Odpovede.md'
     text = load_file(file)
     answers_text = load_file(file2)
