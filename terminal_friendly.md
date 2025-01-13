@@ -1177,3 +1177,150 @@
 	b) refers to poor performance of the trained model on the training data
 	c) refers to failing to learn the problem from the training data sufficiently
 	d) refers to high performance on the validation and test data
+	
+171. Assign to the correct group: (statistical power is underpowered, statistical power is overpowered). Select only underpowered.
+	a) unethical to use the statistical results
+	b) wasteful
+	c) the testing becomes useless
+	
+172. Which of following is Epoch?
+	a) one iteration over the entire dataset
+	b) the number of times a certain batch is passed via the model
+	c) smaller portion of dataset to pass into the model 
+	
+173. Which of following is Iteration?
+	a) one iteration over the entire dataset
+	b) the number of times a certain batch is passed via the model
+	c) smaller portion of dataset to pass into the model 
+	
+174. How does data cleaning play an important role in the Data Science process?
+	a) helps increase the accuracy of the model in machine learning
+	b) data cleaning helps transform it into a format that data scientists can work with
+	c) because we need to divide dataset into smaller pieces
+	d) it may take up to 80% of the time of the analysis process
+	
+175. What are the most common Measures of Central Tendency?
+	a) Variance, Standard Deviation
+	b) Skewness, Kurtosis
+	c) Mean, Median, Mode, Variance, Standard Deviation
+	d) Mean, Median, Mode
+	
+176. Which of these metrics can be used to evaluate a regression model?
+	a) AUC-ROC
+	b) Recall
+	c) Accuracy
+	d) RMSE
+	
+177. What is DevOps?
+	a) software development methodology
+	b) development of machine learning products
+	c) methodogoly to speed up the delivery of higher quality software by combining and automating the work of software development and IT operations teams
+	d) software development (Dev) combines with IT operations (Ops)
+	e) extension of Agile software development principles
+	
+178. In NLP, the process of cleaning words like "and", "is", "a", "an", "the" from sentences is called:
+	a) Stemming
+	b) Lemmatization
+	c) Stop and removal
+	d) Another technique
+	
+179. Box-Cox transform is Power Transformer:
+	a) Áno
+	b) Nie
+	
+180. Assign to the correct groups: (Supervised learning, Unsupervised learning). Select only Unsupervised learning.
+	a) Split in train, validation, and test dataset
+	b) Input data is unlabeled
+	c) No split
+	d) Input data is labeled
+	e) Classification and Regression
+	f)  Clustering, dimension reduction, and density estimation
+	g) Used for analysis
+	h) Used for prediction
+	
+181. Gradient descent is a type of ML algorithm that is used to improve the accuracy of a ML model. It works by training a series of weak models, then combining their predictions to create a final prediction.
+	a) Áno
+	b) Nie
+	
+182. What is GDPR?
+	a) EU law applied for big companies
+	b) the EU's primary data governance regulation applies to any business using data from EU data subjects
+	c) the General Data Protection Regulation, according to which EU can fines of up to 20 million of 4% of global revenue
+	d) inconvenience for everyone because of non-stop signing agreements
+	
+183. What is the aim of the Data Science process?
+	a) to build a data-centric product for an organization
+	b) to create the best machine learning model
+	c) to augment human creativity and intelligence
+	d) to decompose a data analytic problem into smaller ones for analysis
+	
+184. Assumptions of Student's t-test:
+	a) samples must be randomly sampled from the population
+	b) no difference between the sample means
+	c) samples have a normal distribution
+	d) the number of samples is 2
+	
+185. The main assumptions of statistical tests are:
+	a) Gaussian distribution
+	b) similar variance
+	c) data points are independent
+	d) data points are dependent
+	e) homoscedasticity
+	
+186. Components of responsible AI are:
+	a) Data curation, model curation and deployment
+	b) Data modeling, data sampling and careful hypothesis testing
+	c) Privacy, security and safety, ethics, fairness, accountability, transparency
+	
+187. Which of these are used for Normality check?
+	a) Levene
+	b) Distribution plot
+	c) Histogram
+	d) QQ plot
+	e) Shapiro-Wilk Test
+	
+188. Select the best option to describe a Python virtual environment:
+	a) virtually encapsulated environment
+	b) virtually isolated environment
+	c) virtually isolated and encapsulated environment
+	
+189. Responsible Data Science aims to:
+	a) make data according to FAIR and FACT
+	b) to maximize the availability of high quality data
+	c) limiting the potential of misuse that could erode fundamental rights and undermine the public trust in digital technologies
+	d) place work in the context of social, legal, ethical aspects
+	e) make data present everywhere and for everyone
+	
+190. Assumptions of Mann-Whitney U Test
+	a) the number of samples is 2
+	b) samples must be independent and observations must be independent
+	c) samples are not normally distributed
+	d) samples are normally distributed
+	e) the number of observations is at least 20 in each sample
+	f) samples are normally distributed
+	
+191. Normalization of features is always required before training a Logistic Regression model:
+	a) Áno
+	b) Nie
+	
+192. Fairness in responsible AI is about:
+	a) Continuous data modeling in development
+	b) Active monitoring for performance drift and bias review
+	c) Model retraining
+	d) Continuous model and data curation to detect imbalanced outcomes
+	
+193. Assign to the correct group (Generative model / Discriminative model). Select only Discriminative model.
+	   a) Naive Bayes
+	   b) SVM
+	   c) Bayesian networks
+	   d) Logistic Regression
+	   
+194. Generative models can generate data:
+	a) Áno
+	b) Nie
+	
+195. Which of the following libraries are useful to save a model?
+	a) pickle
+	b) joblib
+	c) numpy
+	d) statmodels
