@@ -1,7 +1,7 @@
 # IAU Exam
 This script will help you prepare yourself to IAU final exam.
 
-<img src="https://github.com/xtruhlar/IAU-Old-Tests-Script/blob/main/Bez%20názvu.gif" width="450" alt="IAU Exam GIF">
+<img src="https://github.com/xtruhlar/IAU-Old-Tests-Script/blob/main/l.gif" width="450" alt="IAU Exam GIF">
 
 ## Instalation
 ```bash
@@ -22,32 +22,33 @@ Select mode:
 Question will guide you how to answer:
 ### Type 1:
 ```md
-1. Convolutional Neural Network can be trained mainly as a supervised learning.
-	a) Áno
-	b) Nie
+[?] 1. Convolutional Neural Network can be trained mainly as a supervised learning.: 
+ > [X] a) Áno
+   [ ] b) Nie
 ```
-To get point you have to answer with single option + `)`. Example: `a)`
+To get point you have to answer with right arrow on the correct option.
 
 ### Type 2:
 ```md
-2. Among the following, which one are hyperparameters
-	a) number of layers in the neural network
-	b) learning rate α (alpha)
-	c) size(s) of hidden layers
-	d) number of iterations
+[?] 2. Among the following, which one are hyperparameters: 
+   [X] a) number of layers in the neural network
+   [X] b) learning rate α (alpha)
+   [X] c) size(s) of hidden layers
+ > [X] d) number of iterations
 ```
-If multiple answers are correct, you have to type all of them to get full points. Example `a) b) c) d)`
+To get point you have to answer with right arrow on the all correct options.
 
 ### Type 3:
 ```md
-7. Assign to the correct group (Singular Value Decomposition / Distributional Semantics): - SVD: , Distributional Semantics:
-	a) Truncated SVD
-	b) Word Embeddings 
-	c) CBOW
-	d) Latent Semantic Indexing (LSI)
-	e) Skip-Gram
-	f) Latent Semantic Analysis (LSA)
+[?] 7. Assign to the correct group (Singular Value Decomposition / Distributional Semantics). Select only SVD ...: 
+ > [ ] a) Truncated SVD
+   [ ] b) Word Embeddings
+   [ ] c) CBOW
+   [ ] d) Latent Semantic Indexing (LSI)
+   [ ] e) Skip-Gram
+   [ ] f) Latent Semantic Analysis (LSA)
+
 ```
-If you have to connect term and option, either the `(`, `)` will guide you, or there is NOTE in the question, that is saying how is the correct answer structured. In this example it is `SVD: , Distributional Semantics:`. Answer: SVD: a) d) f), Distributional Semantics: b) c) e)
+If you have to connect term and option, in the end of the question, there is what you should select. In this case only SVD.
 
 DISCLAIMER: There might be typos or errors in the answers. If you find some, let me know in [Issues](https://github.com/xtruhlar/IAU-Old-Tests-Script/issues) section.
