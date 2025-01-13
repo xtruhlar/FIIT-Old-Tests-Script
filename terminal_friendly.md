@@ -25,7 +25,7 @@
 	a) Áno
 	b) Nie)
 	
-7. Assign to the correct group (Singular Value Decomposition / Distributional Semantics): - SVD: , Distributional Semantics:
+7. Assign to the correct group (Singular Value Decomposition / Distributional Semantics). Select only SVD and left the Distributional Semantics unmarked.
 	a) Truncated SVD
 	b) Word Embeddings 
 	c) CBOW
@@ -41,7 +41,7 @@
 	e) TF-IDF
 	f) word embedding
 	
-9. Assign to the correct group (Euclidian distance / Cosine similarity)
+9. Assign to the correct group (Euclidian distance / Cosine similarity). Select only Euclidian distance and left the cosine similarity unmarked.
 	a) the distance between two points
 	b) the angle between two vectors
 	
@@ -153,7 +153,7 @@
 	b) Try higher degree of polynomial regression
 	c) Do feature selection
 	
-26. Assign to the correct group: (exploration phase / data collection / the quest / data modelling / model deployment)
+26. Assign to the correct group: (exploration phase / data collection / the quest / data modelling / model deployment). Which are Exploration phase?
 	a) finds optimal solution in an area
 	b) investigate various promising areas in a search space
 	
@@ -175,13 +175,13 @@
 	d) when there is no child of any individuals
 	e) no improvement in the population for X iterations
 	
-30. Assign to the correct group for the Spam filtering agent example. (Sensors / Actuators / Environment / Performance measure)
+30. Assign to the correct group for the Spam filtering agent example. (Sensors / Actuators / Environment / Performance measure). Select only Actuators.
 	a) emails across users, email traffic
 	b) mark as spam, transfer messages
 	c) email client or email server
 	d) spam block, false positives, false negatives
 	
-31. Assign to the correct group: (Monte Carlo simulation / Imperfect, real-time decisions) - Monte Carlo: , Imperfect:
+31. Assign to the correct group: (Monte Carlo simulation / Imperfect, real-time decisions). Select only Imperfect.
 	a) involve thousands or tens of thousands of recalculations before it is complete
 	b) assesses the impact of risk, allowing for better decision making uder certainty
 	c) presents all the possible outcomes of decisions
@@ -212,7 +212,7 @@
 	d) 0.70
 	e) 0.90
 	
-36. Assign to the correct group: (R2, MSE, MAE)
+36. Assign to the correct group: (R2, MSE, MAE). Select only MSE.
 	a)  1/n Σ (y_i - ŷ_i)^2
 	b)  1/n Σ |y_i - ŷ_i|
 	c)  1 - (Σ (y_i - ŷ_i)^2) / (Σ (y_i - ȳ)^2)
@@ -229,7 +229,7 @@
 	c) by combination of code and predefined rules
 	d) from training data for machine learning
 	
-39. How to avoid overfitting and underfitting? (overfitting: , underfitting:)
+39. How to avoid overfitting and underfitting? Select only how to avoid underfitting, the overfitting should be unmarked.
 	a) regularization
 	b) removing non-informative features
 	c) increasing the training time of the model
@@ -297,7 +297,7 @@
 	b) we test hypotheses, do a visual exploration
 	c) we check if the data has a suitable structure
 	
-48. Assign the chart types to the correct group: (univariate analysis / bivariate analysis)
+48. Assign the chart types to the correct group: (univariate analysis / bivariate analysis). Select only univariate.
 	a) Histogram
 	b) Distributions plots
 	c) Heatmap
@@ -476,7 +476,7 @@
 	d) measurement error or input error
 	e) special kind of sensor data
 	
-71. Priradte do správnej skupiny (imputation / outlier detection)
+71. Priradte do správnej skupiny (imputation / outlier detection). Select only Imputation.
 	a) Assigning a unique value
 	b) KNN Imputer
 	c) 1.5 of IQR below 25% or above 75%
@@ -487,7 +487,7 @@
 	h) Mean Imputation
 	i) 3x standard deviations from the mean
 	
-72. Priradte do správnej skupiny (Dimensional reduction / Feature selection)
+72. Priradte do správnej skupiny (Dimensional reduction / Feature selection). Select only Feature selection.
 	a) Linear Discriminant Analysis LDA
 	b) Mutual Information MI
 	c) Recursive Feature Elimination RFE
@@ -503,7 +503,7 @@
 	m) Embedded
 	n) Principal Components Analysis PCA
 	
-73. Priradte do správnej skupiny (Make data more Gaussian / Scale numerical data / Encode categorical data) - Gaussian: , Scale: , Encode:
+73. Priradte do správnej skupiny (Make data more Gaussian / Scale numerical data / Encode categorical data). Select only Gaussian.
 	a) Yeo-Johnson transform
 	b) MinMaxScaler
 	c) Label encoding
@@ -531,7 +531,7 @@
 	b) It is small enough for experiments with data
 	c) It is large enough to yield meaningful results
 	
-77. Assign to the correct group: (Gaussian / not normal distribution)
+77. Assign to the correct group: (Gaussian / not normal distribution). Select only not notmal distribution.
 	a) parametric tests
 	b) ANOVA
 	c) Mann-Whitney U Test
@@ -552,7 +552,7 @@
 	d) the number of observations is at least 20 in each sample
 	e) the number of samples is 2
 	
-80. Assign to the correct group (Population / Sample)
+80. Assign to the correct group (Population / Sample). Select sample.
 	a) all possible observations from the investigation domain
 	b) a randomly selected set of observations from the population
 	
@@ -582,7 +582,7 @@
 	a) Áno
 	b) Nie
 	
-85. Assign to the correct groups (Gradient boosting / Gradient descent)
+85. Assign to the correct groups (Gradient boosting / Gradient descent). Select only Gradien descent.
 	a) an iterative first-order optimization algorithm used to find a local optimum of a given function. It is commonly used in ML/DL to minimize a loss function.
 	b) a type of ML algorithm that is used to improve the accuracy of a ML model. It works by training a series of weak models, then combining their predictions to create a final prediction.
 	
@@ -592,11 +592,11 @@
 	c) Google TPU
 	d) GPU as general purpose processors
 	
-87. Assign to the correct group (Dropout / Batch normalization)
+87. Assign to the correct group (Dropout / Batch normalization). Select normalization
 	a) dropping out hidden and visible nodes of a network randomly to prevent overfitting, typically 20% of nodes
 	b) normalizing the inputs in every layer so that they have mean output activation of zero and standard deviation of one
 	
-88. Assign to the correct group (parameter / hyper-parameter)
+88. Assign to the correct group (parameter / hyper-parameter). Select parameter
 	a) configuration variable that is internal to the model whose value can be estimated from data
 	b) parameter whose value is set before the learning process begins. It determines how the model is trained and the model structure
 	
@@ -614,7 +614,7 @@
 	a) Áno
 	b) Nie
 	
-92. Assign to the correct group (metrika na vybudovanie regresívnych modelov / metrika na hodnotenie regresívnych modelov) - Hodnotenie: , Vybudovanie:
+92. Assign to the correct group (metrika na vybudovanie regresívnych modelov / metrika na hodnotenie regresívnych modelov). Select hodnotenie.
 	a) Residual Sum of Subsets (RSS)
 	b) Ordinary Least Squares regression (OLS)
 	c) Residual Standard Error (RSE)
@@ -632,7 +632,7 @@
 	f) data reduction
 	g) data binning
 	
-95. Assign to the correct group (Feature projection / Feature selection) - Selection: , Projection:
+95. Assign to the correct group (Feature projection / Feature selection) Select only Feature Selection.
 	a) reduces the number of input variables for a dataset
 	b) selects a subset of input features that are most relevant to the target variable
 	
@@ -642,7 +642,7 @@
 	c) active monitoring for performance drift and bias review
 	d) model retraining
 	
-97. Assign to group (Responsible AI / Ethics and AI / Trustworthy AI / Human-Centric AI)
+97. Assign to group (Responsible AI / Ethics and AI / Trustworthy AI / Human-Centric AI). Select only Responsible AI.
 	a) Responsible development of human-centric and trustworthy AI systems
 	b) methodology for the implementation of AI methods in real organizations
 	c) The purpose of AI is to augment Human Intelligence
@@ -656,7 +656,7 @@
 	d) place work in the context of social, legal, ethical aspects
 	e) to maximize the availability of high quality data
 	
-99. Assign to the correct group for Data Governance (Appropriate Usage / Data Lifecycle / Accessibilities / Ownership)
+99. Assign to the correct group for Data Governance (Appropriate Usage / Data Lifecycle / Accessibilities / Ownership). Select only ownership.
 	a) defines how to manage acquiring, storing, selling and purging data
 	b) defines who can access the data, what exactly can they see, and under what circumstances
 	c) defines what constitutes appropriate and inappropriate use of data internally and externally, particularly for automated decision
@@ -792,7 +792,7 @@
 	a) Áno
 	b) Nie
 	
-115. Assign to the correct group (Human-Inspired / Swarm-Inspired / Evolution-Inspired / Physics-Inspired)
+115. Assign to the correct group (Human-Inspired / Swarm-Inspired / Evolution-Inspired / Physics-Inspired). Select only Evolution.
 	a) Hill Climbing
 	b) Ant Colony Optimization (ACO)
 	c) Simulated Annealing (SA)
@@ -813,7 +813,7 @@
 	c) Named entity recognition
 	d) Stemming
 	
-118. Assign to the correct group (Inverse Document Frequency / Term Frequency) - Document: , Term: 
+118. Assign to the correct group (Inverse Document Frequency / Term Frequency). Select only Inverse Document Frequency.
 	a) (word[i] frequency in document[j]) / (total words in document[j])
 	b) -log2(documents with word[i] / total documents)
 	
@@ -841,7 +841,7 @@
 	h) 0.75
 	i) 0.18
 	
-122. Assign to the correct group (F1 / Accuracy / Recall / Precision)
+122. Assign to the correct group (F1 / Accuracy / Recall / Precision). Select only Recall.
 	a) TP/(TP+FP)
 	b) (TP+TN)/(TP+TN+FP+FN)
 	c) TP/(TP+FN)
@@ -893,7 +893,7 @@
 	c) the smaller the p-value, the stronger the evident to reject H1
 	d) the p-value is the evidence against a H1
 	
-130. Assign to the correct group (Descriptive statistics / Inferential statistics)
+130. Assign to the correct group (Descriptive statistics / Inferential statistics). Select only Descriptive statistics.
 	a) multivariate correlations
 	b) hypothesis testing
 	c) summarizing raw observations into information that we can understand
@@ -903,7 +903,7 @@
 	g) applied to means testing
 	h) univariate shape, center, spred
 	
-131. Assign to the correct group (Data cleaning / Data selection / Data preparation)
+131. Assign to the correct group (Data cleaning / Data selection / Data preparation). Select only Data preparation.
 	a) Outlier detection
 	b) Data Sampling
 	c) Imputation
@@ -958,7 +958,7 @@
 	a) Áno
 	b) Nie
 	
-141. Assign to the correct group (Post-Prunning / Pre-Prunning)
+141. Assign to the correct group (Post-Prunning / Pre-Prunning). Select only Pre-pruning.
 	a) Allow the tree to overfit the training data, then remove branches from a fully grown tree
 	b) Stop growing the tree earlier before it reaches the point where it perfectly classifies the training data
 	
@@ -975,7 +975,7 @@
 	c) the number of samples is only 2
 	d) samples are normally distributed
 	
-144. Assign to the correct group. (Wrapper Feature Selection Methods / Filter Feature Selection Methods / Embedded Feature Selection Methods )
+144. Assign to the correct group. (Wrapper Feature Selection Methods / Filter Feature Selection Methods / Embedded Feature Selection Methods ). Select only Filter Feature Selection Methods.
 	a) F-value
 	b) Forward Selection
 	c) Variance Threshold
@@ -989,7 +989,7 @@
 	k) Recursive Feature Elimination
 	l) Elastic Net
 	
-145. Assign to the correct group (Single-solution-based / Population-based)
+145. Assign to the correct group (Single-solution-based / Population-based). Select Single-solution-based.
 	a) Particle Swarm Optimization (PSO)
 	b) Simulated Annealing
 	
@@ -1031,7 +1031,7 @@
 	e) The evaluation is scored in a round-robin fashion.
 	f) it uses k different portions (k>2) of the data to train and test a model at different iterations
 	
-152. Trade-off between Exploitation and Exploration.
+152. Trade-off between Exploitation and Exploration. What is Exploration?
 	a) the search for new sources of relevant page
 	b) crawling of pages where the expected  value can be predicted with a high confidence
 	

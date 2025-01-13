@@ -1,5 +1,12 @@
 import random
 import os
+import subprocess
+import sys
+
+# Ensure inquirer is installed
+subprocess.check_call([sys.executable, "-m", "pip", "install", "inquirer"])
+
+import inquirer
 
 def load_file(file):
     encodings = ['utf-8', 'cp1250', 'latin-1', 'iso-8859-1']
@@ -24,7 +31,7 @@ def split_questions(text):
         elif line[0].isdigit():
             if current_question:
                 questions.append(current_question)
-            current_question = {'question': line, 'answers': []}
+            current_question = {'question': line, 'answers': [], 'type': 'checkbox'}  # All questions are checkbox type
         elif line.startswith('\t'):
             if current_question:
                 current_question['answers'].append(line.strip())
@@ -37,57 +44,62 @@ def get_answers(text):
     for line in text.split('\n'):
         if line.strip() and line[0].isdigit():
             question_number, answer = line.split('.', 1)
-            answers[question_number.strip()] = answer.strip()
+            # Extract just the letters from the answers (e.g., "a) b)" -> ["a", "b"])
+            answer_letters = [a.split(')')[0].strip() for a in answer.split()]
+            answers[question_number.strip()] = answer_letters
     return answers
 
-def normalize_answer(answer):
-    normalized = set(answer.replace(',', '').lower().split())
-    single_letter_answers = {a[0] for a in normalized if len(a) > 1 and a[1] == ')'}
-    normalized.update(single_letter_answers)
-    return normalized
-
-def check_answer(question_number, user_answer, correct_answers):
-    correct_answer = correct_answers.get(question_number)
-    if correct_answer:
-        user_set = normalize_answer(user_answer)
-        correct_set = normalize_answer(correct_answer)
-        correct_count = len(user_set & correct_set)
-        incorrect_count = len(user_set - correct_set)
-        total_correct = len(correct_set)
-        score = (correct_count - incorrect_count) / total_correct
-        return max(score, 0)  # Ensure the score is not negative
-    return 0
 
 def test_user(questions, correct_answers):
     points = 0
     for q in questions:
         os.system('cls' if os.name == 'nt' else 'clear')
-        # points / current question / total questions
         print(f"Points: {round(points, 2)} / {questions.index(q)}\n")
         question_number = q['question'].split('.')[0]
-        print(q['question'])
-        for a in q['answers']:
-            print(a)
-        user_answer = input("\nYour answer: ")
-        score = check_answer(question_number, user_answer, correct_answers)
-        if score == 1:
+
+        # Display question and get user answers
+        answer = inquirer.prompt([
+            inquirer.Checkbox(
+                name='answer',
+                message=q['question'],
+                choices=q['answers']
+            )
+        ])
+        
+        # Extract only the letters (e.g., "a)", "b)") from the user-selected answers
+        user_answers = set([a.split(')')[0].strip() for a in answer['answer']])
+        correct_set = set(correct_answers.get(question_number, []))
+
+        # Compare user's answers with the correct answers
+        if user_answers == correct_set:
             print("Correct!\n")
             points += 1
-        elif score > 0:
-            print(f"Partially correct! You got {round(score * 100, 2)}% of the answer correct.\nThe correct answer is: {correct_answers.get(question_number, 'Unknown')}\n")
-            points += score
         else:
-            print(f"Incorrect! The correct answer is: {correct_answers.get(question_number, 'Unknown')}\n")
+            correct_formatted = ', '.join(correct_answers.get(question_number, []))
+            print(f"Wrong, the correct answers are {correct_formatted}\n")
+
         input("Press Enter ⏎ to continue")
+
+
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
-    # Select Course (PIB, IAU)
-    course = input("Select course\n1: PIB, \n2: IAU\nCourse:")
-    if course == '1':
+
+    # Course Selection
+    course_questions = [
+        inquirer.List(
+            'course',
+            message="Select course",
+            choices=['PIB', 'IAU'],
+        )
+    ]
+    course_answer = inquirer.prompt(course_questions)
+    course = course_answer['course']
+
+    if course == 'PIB':
         file = 'PIB_Qs.md'
         file2 = 'PIB_answers.md'
-    elif course == '2':
+    elif course == 'IAU':
         file = 'terminal_friendly.md'
         file2 = 'IAU Odpovede.md'
 
@@ -97,14 +109,27 @@ def main():
     questions = split_questions(text)
     correct_answers = get_answers(answers_text)
 
-    mode = input("Select mode\n1: Sequential, \n2: Random, \n3: 30 Questions Test \n4: Starting with...\nMode:")
-    if mode == '2':
+    # Mode Selection
+    mode_questions = [
+        inquirer.List(
+            'mode',
+            message="Select mode",
+            choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...'],
+        )
+    ]
+    mode_answer = inquirer.prompt(mode_questions)
+    mode = mode_answer['mode']
+
+    if mode == 'Random':
         random.shuffle(questions)
-    elif mode == '3':
+    elif mode == '30 Questions Test':
         questions = random.sample(questions, 30)
-    elif mode == '4':
-        start = int(input("Start from question: "))
-        questions = questions[start-1:start+35]
+    elif mode == 'Starting with...':
+        start_question = inquirer.prompt([
+            inquirer.Text('start', message="Start from question number")
+        ])
+        start = int(start_question['start'])
+        questions = questions[start - 1:start + 35]
 
     test_user(questions, correct_answers)
 
