@@ -1,9 +1,17 @@
 import random
 import os
 
-def load_file(file_name):
-    with open(file_name, 'r') as file:
-        return file.read()
+def load_file(file):
+    encodings = ['utf-8', 'cp1250', 'latin-1', 'iso-8859-1']
+    
+    for encoding in encodings:
+        try:
+            with open(file, 'r', encoding=encoding) as f:
+                return f.read()
+        except UnicodeDecodeError:
+            continue
+    
+    raise UnicodeDecodeError(f"Unable to decode file with any of these encodings: {encodings}")
 
 def split_questions(text):
     questions = []
@@ -53,7 +61,7 @@ def check_answer(question_number, user_answer, correct_answers):
 def test_user(questions, correct_answers):
     points = 0
     for q in questions:
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         # points / current question / total questions
         print(f"Points: {round(points, 2)} / {questions.index(q)}\n")
         question_number = q['question'].split('.')[0]
@@ -73,7 +81,7 @@ def test_user(questions, correct_answers):
         input("Press Enter ⏎ to continue")
 
 def main():
-    os.system('clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
     # Select Course (PIB, IAU)
     course = input("Select course\n1: PIB, \n2: IAU\nCourse:")
     if course == '1':
