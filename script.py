@@ -22,20 +22,35 @@ def load_file(file):
 def split_questions(text):
     questions = []
     current_question = None
+    question_body = []  # Temporary storage for multiline questions
+
     for line in text.split('\n'):
         if line.strip() == '':
+            continue
+        elif line[0].isdigit() and '.' in line:  # Start of a new question
             if current_question:
+                current_question['question'] = ' '.join(question_body).strip()
                 questions.append(current_question)
-                current_question = None
-        elif line[0].isdigit():
-            if current_question:
-                questions.append(current_question)
-            current_question = {'question': line, 'answers': [], 'type': 'checkbox'}  # All questions are checkbox type by default
-        elif line.startswith('\t'):
-            if current_question:
+            current_question = {'question': '', 'answers': [], 'type': 'checkbox'}
+            question_body = [line.strip()]  # Start capturing question text
+        elif 'a)' in line and current_question:  # Start of options
+            parts = line.split('a)', 1)
+            question_body.append(parts[0].strip())
+            current_question['question'] = ' '.join(question_body).strip()
+            current_question['answers'].append('a) ' + parts[1].strip())
+        elif current_question and current_question['answers']:  # Part of an answer
+            if line.strip()[0] in ('a', 'b', 'c', 'd', 'e','f','g','h','i','j','k','l','m','n') and ')' in line.strip()[:3]:
                 current_question['answers'].append(line.strip())
+            else:
+                current_question['answers'][-1] += ' ' + line.strip()
+        else:  # Part of a multiline question
+            question_body.append(line.strip())
+
+    # Add the last question if any
     if current_question:
+        current_question['question'] = ' '.join(question_body).strip()
         questions.append(current_question)
+
     return questions
 
 def get_answers(text):
@@ -72,6 +87,7 @@ def test_user(questions, correct_answers, wrong_answers):
         question_number = q['question'].split('.')[0]
 
         # Shuffle the options before displaying the question
+        original_answers = q['answers'][:]
         random.shuffle(q['answers'])
 
         # Strip the letters from the options
@@ -87,7 +103,7 @@ def test_user(questions, correct_answers, wrong_answers):
         ])
 
         # Extract only the letters (e.g., "a)", "b)") from the user-selected answers
-        user_answers = set([q['answers'][display_answers.index(a)].split(')')[0].strip() for a in answer['answer']])
+        user_answers = set([original_answers[display_answers.index(a)].split(')')[0].strip() for a in answer['answer']])
         correct_set = set(correct_answers.get(question_number, []))
 
         # Compare user's answers with the correct answers
@@ -95,7 +111,7 @@ def test_user(questions, correct_answers, wrong_answers):
             print("Correct!\n")
             points += 1
         else:
-            correct_formatted = ', '.join(correct_answers.get(question_number, []))
+            correct_formatted = ', '.join([original_answers[ord(c) - ord('a')] for c in correct_answers.get(question_number, [])])
             print(f"Wrong, the correct answers are {correct_formatted}\n")
             wrong_answers[question_number] = wrong_answers.get(question_number, 0) + 1
 
