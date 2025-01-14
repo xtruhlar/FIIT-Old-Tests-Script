@@ -1,4 +1,4 @@
-# IAU Exam
+# FIIT Exams
 This script will help you prepare yourself to FIIT final exams.
 
 <img src="https://github.com/xtruhlar/IAU-Old-Tests-Script/blob/main/l.gif" width="450" alt="IAU Exam GIF">
