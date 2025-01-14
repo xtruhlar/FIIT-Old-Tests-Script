@@ -662,7 +662,7 @@
 	c) defines what constitutes appropriate and inappropriate use of data internally and externally, particularly for automated decision
 	d) defines who owns the data and makes decisions on how and if it can be accessed
 	
-100. What is DGPR?
+100. What is GDPR?
 	a) the EU's primary data governance regulation applies to any business using data from EU data subjects
 	b) inconvenience for everybody because of non-stop signing agreements
 	c) the General Data Protection Regulation, according to which EU can fines of up to €20 million or 4% of global revenue
@@ -679,7 +679,7 @@
 	c) connection with new data
 	d) plots, graphs, summary statistics 
 	
-103. Join the pairs. (skewness > 0 / skewness = 0 / skewness < 0) - a) znamienko 0, b) znamienko 0, ... 
+103. Join the pairs. (skewness > 0 / skewness = 0 / skewness < 0). What is skewness < 0? 
 	a) normally distributed
 	b) more weight in the right tail of the distribution
 	c) more weight in the left tail of the distribution

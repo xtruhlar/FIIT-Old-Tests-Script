@@ -2,11 +2,10 @@ import random
 import os
 import subprocess
 import sys
+import inquirer
 
 # Ensure inquirer is installed
 subprocess.check_call([sys.executable, "-m", "pip", "install", "inquirer"])
-
-import inquirer
 
 def load_file(file):
     encodings = ['utf-8', 'cp1250', 'latin-1', 'iso-8859-1']
@@ -49,8 +48,23 @@ def get_answers(text):
             answers[question_number.strip()] = answer_letters
     return answers
 
+def load_wrong_answers(file='wrong_answers.md'):
+    wrong_answers = {}
+    try:
+        with open(file, 'r') as f:
+            for line in f:
+                question_number, count = line.strip().split(':')
+                wrong_answers[question_number] = int(count)
+    except FileNotFoundError:
+        pass
+    return wrong_answers
 
-def test_user(questions, correct_answers):
+def save_wrong_answers(wrong_answers, file='wrong_answers.md'):
+    with open(file, 'w') as f:
+        for question_number, count in wrong_answers.items():
+            f.write(f"{question_number}:{count}\n")
+
+def test_user(questions, correct_answers, wrong_answers):
     points = 0
     for q in questions:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -77,10 +91,11 @@ def test_user(questions, correct_answers):
         else:
             correct_formatted = ', '.join(correct_answers.get(question_number, []))
             print(f"Wrong, the correct answers are {correct_formatted}\n")
+            wrong_answers[question_number] = wrong_answers.get(question_number, 0) + 1
 
         input("Press Enter ⏎ to continue")
 
-
+    save_wrong_answers(wrong_answers)
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -108,13 +123,14 @@ def main():
 
     questions = split_questions(text)
     correct_answers = get_answers(answers_text)
+    wrong_answers = load_wrong_answers()
 
     # Mode Selection
     mode_questions = [
         inquirer.List(
             'mode',
             message="Select mode",
-            choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...'],
+            choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...', 'Train 30 Questions with Most Wrong Answers'],
         )
     ]
     mode_answer = inquirer.prompt(mode_questions)
@@ -130,8 +146,11 @@ def main():
         ])
         start = int(start_question['start'])
         questions = questions[start - 1:start + 35]
+    elif mode == 'Train 30 Questions with Most Wrong Answers':
+        sorted_questions = sorted(questions, key=lambda q: wrong_answers.get(q['question'].split('.')[0], 0), reverse=True)
+        questions = sorted_questions[:30]
 
-    test_user(questions, correct_answers)
+    test_user(questions, correct_answers, wrong_answers)
 
 if __name__ == "__main__":
     main()
