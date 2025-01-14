@@ -3,6 +3,7 @@ import os
 import subprocess
 import sys
 import inquirer
+import textwrap
 
 # Ensure inquirer is installed
 subprocess.check_call([sys.executable, "-m", "pip", "install", "inquirer"])
@@ -79,7 +80,7 @@ def save_wrong_answers(wrong_answers, file='wrong_answers.md'):
         for question_number, count in wrong_answers.items():
             f.write(f"{question_number}:{count}\n")
 
-def test_user(questions, correct_answers, wrong_answers):
+def test_user(questions, correct_answers, wrong_answers, max_width=100):
     points = 0
     for q in questions:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -99,15 +100,19 @@ def test_user(questions, correct_answers, wrong_answers):
         # Strip the letters from the options
         display_answers = [a.split(') ', 1)[1] if ') ' in a else a for a in q['answers']]
 
+        # Wrap the question text and answers to the specified width
+        wrapped_question = '\n'.join(textwrap.wrap(q['question'], width=max_width))
+        wrapped_answers = [textwrap.fill(a, width=max_width) for a in display_answers]
+
         # Escape curly braces in the question message
-        q['question'] = q['question'].replace('{', '{{').replace('}', '}}')
+        wrapped_question = wrapped_question.replace('{', '{{').replace('}', '}}')
 
         # Display question and get user answers
         answer = inquirer.prompt([
             inquirer.Checkbox(
                 name='answer',
-                message=q['question'],
-                choices=display_answers
+                message=wrapped_question,
+                choices=wrapped_answers
             )
         ])
 
@@ -127,6 +132,7 @@ def test_user(questions, correct_answers, wrong_answers):
         input("Press Enter ⏎ to continue")
 
     save_wrong_answers(wrong_answers)
+
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
