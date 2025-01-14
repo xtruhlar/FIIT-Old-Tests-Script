@@ -90,6 +90,12 @@ def test_user(questions, correct_answers, wrong_answers):
         original_answers = q['answers'][:]
         random.shuffle(q['answers'])
 
+        # Create a dictionary to map the original answers to their text
+        answer_dict = {a.split(')')[0].strip(): a for a in original_answers}
+
+        # Create a dictionary to map the shuffled answers back to their original letters
+        shuffled_answer_dict = {a.split(') ', 1)[1] if ') ' in a else a: a.split(')')[0].strip() for a in q['answers']}
+
         # Strip the letters from the options
         display_answers = [a.split(') ', 1)[1] if ') ' in a else a for a in q['answers']]
 
@@ -106,7 +112,7 @@ def test_user(questions, correct_answers, wrong_answers):
         ])
 
         # Extract only the letters (e.g., "a)", "b)") from the user-selected answers
-        user_answers = set([original_answers[display_answers.index(a)].split(')')[0].strip() for a in answer['answer']])
+        user_answers = set([shuffled_answer_dict[a] for a in answer['answer']])
         correct_set = set(correct_answers.get(question_number, []))
 
         # Compare user's answers with the correct answers
@@ -114,8 +120,8 @@ def test_user(questions, correct_answers, wrong_answers):
             print("Correct!\n")
             points += 1
         else:
-            correct_formatted = ', '.join([original_answers[ord(c) - ord('a')] for c in correct_answers.get(question_number, [])])
-            print(f"Wrong, the correct answers are {correct_formatted}\n")
+            correct_text = ', '.join([answer_dict[c] for c in correct_answers.get(question_number, [])])
+            print(f"Wrong, the correct answers are {correct_text}\n")
             wrong_answers[question_number] = wrong_answers.get(question_number, 0) + 1
 
         input("Press Enter ⏎ to continue")

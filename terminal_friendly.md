@@ -4,7 +4,7 @@
 	  	
 2. Among the following, which one are hyperparameters
 	a) number of layers in the neural network
-	b) learning rate α (alpha)
+	b) learning rate α alpha
 	c) size(s) of hidden layers
 	d) number of iterations
 	
@@ -23,7 +23,7 @@
 	
 6. Neural networks are robust algorithms and data structures able to model difficult problems.
 	a) Áno
-	b) Nie)
+	b) Nie
 	
 7. Assign to the correct group (Singular Value Decomposition / Distributional Semantics). Select only SVD and left the Distributional Semantics unmarked.
 	a) Truncated SVD
@@ -306,7 +306,7 @@
 	f) Regplot
 	g) Pairplot
 	
-49. To avoid data leakage, data preparation must be fit only on  \__________
+49. To avoid data leakage, data preparation must be fit only on
 	a) the test dataset
 	b) the whole dataset
 	c) the training dataset
