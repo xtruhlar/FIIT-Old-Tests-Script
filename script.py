@@ -30,7 +30,7 @@ def split_questions(text):
         elif line[0].isdigit():
             if current_question:
                 questions.append(current_question)
-            current_question = {'question': line, 'answers': [], 'type': 'checkbox'}  # All questions are checkbox type
+            current_question = {'question': line, 'answers': [], 'type': 'checkbox'}  # All questions are checkbox type by default
         elif line.startswith('\t'):
             if current_question:
                 current_question['answers'].append(line.strip())
@@ -71,17 +71,23 @@ def test_user(questions, correct_answers, wrong_answers):
         print(f"Points: {round(points, 2)} / {questions.index(q)}\n")
         question_number = q['question'].split('.')[0]
 
+        # Shuffle the options before displaying the question
+        random.shuffle(q['answers'])
+
+        # Strip the letters from the options
+        display_answers = [a.split(') ', 1)[1] if ') ' in a else a for a in q['answers']]
+
         # Display question and get user answers
         answer = inquirer.prompt([
             inquirer.Checkbox(
                 name='answer',
                 message=q['question'],
-                choices=q['answers']
+                choices=display_answers
             )
         ])
-        
+
         # Extract only the letters (e.g., "a)", "b)") from the user-selected answers
-        user_answers = set([a.split(')')[0].strip() for a in answer['answer']])
+        user_answers = set([q['answers'][display_answers.index(a)].split(')')[0].strip() for a in answer['answer']])
         correct_set = set(correct_answers.get(question_number, []))
 
         # Compare user's answers with the correct answers
