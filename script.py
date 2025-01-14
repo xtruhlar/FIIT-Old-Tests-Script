@@ -93,6 +93,9 @@ def test_user(questions, correct_answers, wrong_answers):
         # Strip the letters from the options
         display_answers = [a.split(') ', 1)[1] if ') ' in a else a for a in q['answers']]
 
+        # Escape curly braces in the question message
+        q['question'] = q['question'].replace('{', '{{').replace('}', '}}')
+
         # Display question and get user answers
         answer = inquirer.prompt([
             inquirer.Checkbox(
