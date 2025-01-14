@@ -315,7 +315,7 @@
 50. Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate merge(dfa, dfb, on='key', how='left')
+	merge(LEFT)
 	a) index key vA vB | 0 k0 b0 | 1 k1 a1 NaN
 	b) index key vA vB | 0 k0 a0 a1
 	c) index key vA vB | 0 k1 a1 b1
@@ -324,7 +324,7 @@
 51. Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate dfa.join(dfb, how='left', lsuffix='_A', rsuffix='_B')
+	join(LEFT)
 	a) index key_A vA key_B vB | 0 k0 a0 k0 b0
 	b) index key_A vA key_B vB | 0 k0 a1 k0 b0
 	c) index key_A vA key_B vB | 0 k1 a1 k1 a1
@@ -333,7 +333,7 @@
 52.  Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate dfa.join(dfb, how='right', lsuffix='_A', rsuffix='_B')
+	join(RIGHT)
 	a) index key_A vA key_B vB | 0 k0 a0 k0 b0
 	b) index key_A vA key_B vB | 0 k0 a1 k0 b0
 	c) index key_A vA key_B vB | 0 k1 a1 k1 a1
@@ -348,7 +348,7 @@
 54. Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate merge(dfa, dfb, on='key', how='outer')
+	merge(OUTER)
 	a) index vA vB | 0 k0 a0 a1
 	b) index vA vB | 0 k0 a0 b0
 	c) index vA vB | 0 k1 a1 b1
@@ -357,7 +357,7 @@
 55. Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate dfa.join(dfb, how='inner', lsuffix='_A', rsuffix='_B')
+	join(INNER)
 	a) index key_A vA key_B vB | 0 k0 a0 k0 b0
 	b) index key_A vA key_B vB | 0 k0 a1 k0 b0
 	c) index key_A vA key_B vB | 0 k1 a1 k1 a1
@@ -401,12 +401,11 @@
 	b) has two phases: development and deployment
 	
 63. Vyberte správnu možnosť:
-	A sample S consist of 14 observations, where
+	Calculate entropy H(S): A sample S consist of 14 observations, where
 	9 observations belong to class c1 and 5 belong to class c2.
 	The attribute A of S has two values {a1, a2}.
 	For value a1, 6 observations belongs to class c1 and 2 belongs to c2.
 	For value a2, 3 observations belongs to c1 and 3 to c2.
-	Calculate entropy H(S)
 	a) 1.000
 	b) 0.811
 	c) 0.940
@@ -414,7 +413,7 @@
 	e) 0.048
 	f) another value
 	
-64. A sample S consists of 14 observations, where 9 observations belong to class c1 and 6 observations belong to c2. Calculate Gini(S)
+64. Calculate Gini(S): A sample S consists of 14 observations, where 9 observations belong to class c1 and 5 observations belong to c2. 
 	a) 0.970
 	b) 0.048
 	c) 0.459
@@ -440,13 +439,12 @@
 	d) Visualization
 	e) Regression
 	
-68. Vyberte správnu možnosť:
+68. Calculate information gain IG(S, A): Vyberte správnu možnosť:
 	A sample S consist of 14 observations, where
 	9 observations belong to class c1 and 5 belong to class c2.
 	The attribute A of S has two values {a1, a2}.
 	For value a1, 6 observations belongs to class c1 and 2 belongs to c2.
 	We calculated H(S) = 9.40, H(a1) = 0.811, H(a2) = 1.0 in advance.
-	Calculate information gain IG(S, A)
 	a) 0.940
 	b) 0.480
 	c) 0.811
@@ -455,12 +453,11 @@
 	f) 0.048
 	g) 1.000
 	
-69. Vyberte správnu možnosť:
+69.	Calculate entropy H(a1): Vyberte správnu možnosť:
 	A sample S consist of 14 observations, where
 	9 observations belong to class c1 and 5 belong to class c2.
 	The attribute A of S has two values {a1, a2}.
 	For value a1, 6 observations belongs to class c1 and 2 belongs to c2.
-	Calculate entropy H(a1)
 	a) 0.940
 	b) 0.480
 	c) 0.811
@@ -689,7 +686,7 @@
 	[30, 60, 70],
 	[70, 90, 10],
 	[50, 90, 40]])
-	Calculate numpy.amax(a)
+	Calculate numpy.amax[a]
 	a) 60
 	b) [50., 80., 40.]
 	c) [70, 90, 90]
@@ -761,7 +758,7 @@
 110. Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate merge(dfa, dfb, on='key', how='inner')
+	merge(INNER)
 	a) index vA vB | 0 k0 a0 a1
 	b) index vA vB | 0 k0 a0 b0
 	c) index vA vB | 0 k1 a1 b1
@@ -782,13 +779,13 @@
 113. Vyberte správnu možnosť:
 	dfa = pandas.DataFrame({'key': ['k0', 'k1'], 'vA': ['a0', 'a1']})
 	dfb = pandas.DataFrame({'key': ['k0'], 'vB': ['b0']})
-	Calculate merge(dfa, dfb, on='key', how='right')
+	merge(RIGHT)
 	a) index key vA vB | 0 k0 b0 | 1 k1 a1 NaN
 	b) index key vA vB | 0 k0 a0 a1
 	c) index key vA vB | 0 k1 a1 b1
 	d) index key vA vB | 0 k0 a0 b0
 	
-114. Raw data should ne processed one time per interval in the deployment phase for machine learning.
+114. Raw data should be processed one time per interval in the deployment phase for machine learning.
 	a) Áno
 	b) Nie
 	
@@ -964,7 +961,7 @@
 	
 142. The right node in a decision tree is an attribute with?
 	a) high entropy and IG
-	b)balanced IG
+	b) balanced IG
 	c) lowest IG
 	d) highest IG
 	e) high entropy
@@ -1050,7 +1047,7 @@
 	[30, 60, 70],
 	[70, 90, 10],
 	[50, 90, 40]])
-	Calculate numpy.amin(a)
+	Calculate numpy.amin[a]
 	a) 60
 	b) [50., 80., 40.]
 	c) [70, 90, 90]
@@ -1140,7 +1137,7 @@
 	a) Áno
 	b) Nie
 	
-164. Which of the following is true about Residuals ?
+164. Which of the following is true about Residuals?
 	a) Higher is better
 	b) Lower is better
 	
