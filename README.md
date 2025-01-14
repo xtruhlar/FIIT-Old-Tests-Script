@@ -1,5 +1,5 @@
 # IAU Exam
-This script will help you prepare yourself to IAU final exam.
+This script will help you prepare yourself to FIIT final exams.
 
 <img src="https://github.com/xtruhlar/IAU-Old-Tests-Script/blob/main/l.gif" width="450" alt="IAU Exam GIF">
 
@@ -18,6 +18,7 @@ Select mode:
 - 2: Random (All question but shuffled)
 - 3: 30 Questions Test (Random 30 questions)
 - 4: Select where you want to start (if you want to split questions for different days)
+- 5: Train 30 Questions with Most Wrong Answers
 
 Question will guide you how to answer:
 ### Type 1:
