@@ -528,7 +528,7 @@
 	b) It is small enough for experiments with data
 	c) It is large enough to yield meaningful results
 	
-77. Assign to the correct group: (Gaussian / not normal distribution). Select only not notmal distribution.
+77. Assign to the correct group: (Gaussian / not normal distribution). Select only not normal distribution.
 	a) parametric tests
 	b) ANOVA
 	c) Mann-Whitney U Test
