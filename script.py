@@ -119,13 +119,28 @@ def test_user(questions, correct_answers, wrong_answers):
         if user_answers == correct_set:
             print("Correct!\n")
             points += 1
+            if question_number in wrong_answers:
+                if wrong_answers.get(question_number, 0) > 0:
+                    wrong_answers[question_number] = wrong_answers.get(question_number, 0) - 1
+                elif wrong_answers.get(question_number, 0) == 0:
+                    remove_wrongs_with_zero_count(wrong_answers)
+                else:
+                    print("Something went wrong")
         else:
             correct_text = ', '.join([answer_dict[c] for c in correct_answers.get(question_number, [])])
             print(f"Wrong, the correct answers are {correct_text}\n")
             wrong_answers[question_number] = wrong_answers.get(question_number, 0) + 1
+            save_wrong_answers(wrong_answers)
 
         input("Press Enter ⏎ to continue")
 
+    save_wrong_answers(wrong_answers)
+
+def remove_wrongs_with_zero_count(wrong_answers):
+    # Remove entries with zero count
+    keys_to_remove = [key for key, value in wrong_answers.items() if value == 0]
+    for key in keys_to_remove:
+        del wrong_answers[key]
     save_wrong_answers(wrong_answers)
 
 def main():
@@ -165,7 +180,7 @@ def main():
                 inquirer.List(
                     'mode',
                     message="Select mode",
-                    choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...', 'Train 30 Questions with Most Wrong Answers', 'Back'],
+                    choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...', 'Train 10 Questions with Most Wrong Answers', 'Back'],
                 )
             ]
             mode_answer = inquirer.prompt(mode_questions)
@@ -181,9 +196,9 @@ def main():
                 ])
                 start = int(start_question['start'])
                 questions = questions[start - 1:start + 35]
-            elif mode == 'Train 30 Questions with Most Wrong Answers':
+            elif mode == 'Train 10 Questions with Most Wrong Answers':
                 sorted_questions = sorted(questions, key=lambda q: wrong_answers.get(q['question'].split('.')[0], 0), reverse=True)
-                questions = sorted_questions[:30]
+                questions = sorted_questions[:10]
             elif mode == 'Back':
                 break
 
