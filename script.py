@@ -3,7 +3,6 @@ import os
 import subprocess
 import sys
 import inquirer
-import textwrap
 
 # Ensure inquirer is installed
 subprocess.check_call([sys.executable, "-m", "pip", "install", "inquirer"])
@@ -80,7 +79,7 @@ def save_wrong_answers(wrong_answers, file='wrong_answers.md'):
         for question_number, count in wrong_answers.items():
             f.write(f"{question_number}:{count}\n")
 
-def test_user(questions, correct_answers, wrong_answers, max_width=100):
+def test_user(questions, correct_answers, wrong_answers):
     points = 0
     for q in questions:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -100,19 +99,15 @@ def test_user(questions, correct_answers, wrong_answers, max_width=100):
         # Strip the letters from the options
         display_answers = [a.split(') ', 1)[1] if ') ' in a else a for a in q['answers']]
 
-        # Wrap the question text and answers to the specified width
-        wrapped_question = '\n'.join(textwrap.wrap(q['question'], width=max_width))
-        wrapped_answers = [textwrap.fill(a, width=max_width) for a in display_answers]
-
         # Escape curly braces in the question message
-        wrapped_question = wrapped_question.replace('{', '{{').replace('}', '}}')
+        q['question'] = q['question'].replace('{', '{{').replace('}', '}}')
 
         # Display question and get user answers
         answer = inquirer.prompt([
             inquirer.Checkbox(
                 name='answer',
-                message=wrapped_question,
-                choices=wrapped_answers
+                message=q['question'],
+                choices=display_answers
             )
         ])
 
@@ -133,61 +128,68 @@ def test_user(questions, correct_answers, wrong_answers, max_width=100):
 
     save_wrong_answers(wrong_answers)
 
-
 def main():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
 
-    # Course Selection
-    course_questions = [
-        inquirer.List(
-            'course',
-            message="Select course",
-            choices=['PIB', 'IAU'],
-        )
-    ]
-    course_answer = inquirer.prompt(course_questions)
-    course = course_answer['course']
+        # Course Selection
+        course_questions = [
+            inquirer.List(
+                'course',
+                message="Select course",
+                choices=['PIB', 'IAU', 'Exit'],
+            )
+        ]
+        course_answer = inquirer.prompt(course_questions)
+        course = course_answer['course']
 
-    if course == 'PIB':
-        file = 'PIB_Qs.md'
-        file2 = 'PIB_answers.md'
-    elif course == 'IAU':
-        file = 'terminal_friendly.md'
-        file2 = 'IAU Odpovede.md'
+        if course == 'PIB':
+            file = 'PIB_Qs.md'
+            file2 = 'PIB_answers.md'
+        elif course == 'IAU':
+            file = 'terminal_friendly.md'
+            file2 = 'IAU Odpovede.md'
+        elif course == 'Exit':
+            break
 
-    text = load_file(file)
-    answers_text = load_file(file2)
+        text = load_file(file)
+        answers_text = load_file(file2)
 
-    questions = split_questions(text)
-    correct_answers = get_answers(answers_text)
-    wrong_answers = load_wrong_answers()
+        questions = split_questions(text)
+        correct_answers = get_answers(answers_text)
+        wrong_answers = load_wrong_answers()
 
-    # Mode Selection
-    mode_questions = [
-        inquirer.List(
-            'mode',
-            message="Select mode",
-            choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...', 'Train 30 Questions with Most Wrong Answers'],
-        )
-    ]
-    mode_answer = inquirer.prompt(mode_questions)
-    mode = mode_answer['mode']
+        while True:
+            # Mode Selection
+            mode_questions = [
+                inquirer.List(
+                    'mode',
+                    message="Select mode",
+                    choices=['Sequential', 'Random', '30 Questions Test', 'Starting with...', 'Train 30 Questions with Most Wrong Answers', 'Back'],
+                )
+            ]
+            mode_answer = inquirer.prompt(mode_questions)
+            mode = mode_answer['mode']
 
-    if mode == 'Random':
-        random.shuffle(questions)
-    elif mode == '30 Questions Test':
-        questions = random.sample(questions, 30)
-    elif mode == 'Starting with...':
-        start_question = inquirer.prompt([
-            inquirer.Text('start', message="Start from question number")
-        ])
-        start = int(start_question['start'])
-        questions = questions[start - 1:start + 35]
-    elif mode == 'Train 30 Questions with Most Wrong Answers':
-        sorted_questions = sorted(questions, key=lambda q: wrong_answers.get(q['question'].split('.')[0], 0), reverse=True)
-        questions = sorted_questions[:30]
+            if mode == 'Random':
+                random.shuffle(questions)
+            elif mode == '30 Questions Test':
+                questions = random.sample(questions, 30)
+            elif mode == 'Starting with...':
+                start_question = inquirer.prompt([
+                    inquirer.Text('start', message="Start from question number")
+                ])
+                start = int(start_question['start'])
+                questions = questions[start - 1:start + 35]
+            elif mode == 'Train 30 Questions with Most Wrong Answers':
+                sorted_questions = sorted(questions, key=lambda q: wrong_answers.get(q['question'].split('.')[0], 0), reverse=True)
+                questions = sorted_questions[:30]
+            elif mode == 'Back':
+                break
 
-    test_user(questions, correct_answers, wrong_answers)
+            test_user(questions, correct_answers, wrong_answers)
+            os.system('cls' if os.name == 'nt' else 'clear')
+
 
 if __name__ == "__main__":
     main()
