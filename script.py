@@ -134,6 +134,7 @@ def test_user(questions, correct_answers, wrong_answers):
 
         input("Press Enter ⏎ to continue")
 
+    remove_wrongs_with_zero_count(wrong_answers)
     save_wrong_answers(wrong_answers)
 
 def remove_wrongs_with_zero_count(wrong_answers):
