@@ -153,7 +153,7 @@ def main():
             inquirer.List(
                 'course',
                 message="Select course",
-                choices=['PIB', 'IAU', 'Exit'],
+                choices=['ICP', 'PIB', 'IAU', 'Exit'],
             )
         ]
         course_answer = inquirer.prompt(course_questions)
@@ -165,6 +165,9 @@ def main():
         elif course == 'IAU':
             file = 'terminal_friendly.md'
             file2 = 'IAU Odpovede.md'
+        elif course == 'ICP':
+            file = 'testICP.md'
+            file2 = 'answersICP.md'
         elif course == 'Exit':
             break
 
