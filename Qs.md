@@ -22,7 +22,7 @@
     c) Prístupnosť sa týka len technickej kompatibility so zariadeniami.
     d) Prístupnosť je nepodstatná, pokiaľ je produkt funkčný.
     
-5. Aký je rozdiel medzi používateľskou skúsenosťou (UX) a používateľským rozhraním (UI)?
+5. Aký je rozdiel medzi používateľskou skúsenosťou (UX] a používateľským rozhraním (UI]?
 	a) UX sa týka iba vizuálnych prvkov rozhrania.
     b) UI je širší pojem, ktorý zahŕňa aj skúsenosť používateľa s produktom.
     c) UX sa zaoberá celkovým zážitkom používateľa pred, počas a po interakcii s produktom, kým UI sa zameriava na interakčné prvky.
@@ -46,7 +46,7 @@
     c) Agilný prístup vyžaduje veľa dokumentácie, kým vodopád je viac flexibilný.
     d) Vodopád je len pre veľké projekty, agilný prístup je vhodný len pre malé projekty.
     
-9. Čo je to metóda "rýchleho pruhu" (fast track) a ako ovplyvňuje agilný prístup v UX?
+9. Čo je to metóda "rýchleho pruhu" (fast track] a ako ovplyvňuje agilný prístup v UX?
     a) Rýchly pruh zahŕňa pomalý, sekvenčný vývoj produktov.
     b) Rýchly pruh je iteratívny prístup, ktorý sa zameriava na rýchle vytváranie a testovanie prototypov v spolupráci s používateľmi.
     c) Rýchly pruh sa používa na zvýšenie efektivity vývoja, ale ignoruje používateľské skúsenosti.
@@ -60,21 +60,21 @@
 	
 11. Ktorý atribút UX sa týka schopnosti systému riešiť reálne problémy používateľov?  
     a) Usability  
-    b) Useful (užitočnosť)  
-    c) Desirable (žiadanosť)  
-    d) Valuable (pridaná hodnota)
+    b) Useful (užitočnosť] 
+    c) Desirable (žiadanosť]  
+    d) Valuable (pridaná hodnota]
     
 12. Aký atribút UX sa zameriava na to, či je systém jednoduchý na používanie?  
-    a) Findable (nájditeľnosť)  
-    b) Accessible (prístupnosť)  
-    c) Usable (použiteľnosť)  
-    d) Credible (dôveryhodnosť)
+    a) Findable (nájditeľnosť]  
+    b) Accessible (prístupnosť]  
+    c) Usable (použiteľnosť]  
+    d) Credible (dôveryhodnosť]
     
 13. Ktorý atribút UX sa týka schopnosti systému byť nájdený používateľom s čo najmenšou námahou? 
-    a) Usable (použiteľnosť)  
-    b) Findable (nájditeľnosť)  
-    c) Desirable (žiadanosť)  
-    d) Valuable (pridaná hodnota)
+    a) Usable (použiteľnosť]  
+    b) Findable (nájditeľnosť]  
+    c) Desirable (žiadanosť]
+    d) Valuable (pridaná hodnota]
     
 14. Aký komponent usability sa zameriava na to, ako rýchlo si používateľ spomenie, ako vykonať úlohu po jej predchádzajúcom použití?  
     a) Naučiteľnosť  
@@ -125,7 +125,7 @@
     c) Zvýrazňovanie vizuálnych prvkov v dizajne  
     d) Rozširovanie funkcionality webovej aplikácie
     
-22. Aký je rozdiel medzi informačnou architektúrou (IA) a navigáciou na webe?  
+22. Aký je rozdiel medzi informačnou architektúrou (IA] a navigáciou na webe?  
     a) IA je štruktúra webu, zatiaľ čo navigácia je spôsob, akým sa používatelia dostávajú k informáciám  
     b) IA je len názvoslovie pre navigáciu  
     c) Navigácia je štruktúra, IA je vizuálny dizajn  
@@ -189,7 +189,7 @@
     a) Heuristická evaluácia, testovanie použiteľnosti, webová analytika  
     b) Tvorba grafických návrhov a wireframov  
     c) Prieskum trhu a analýza konkurencie  
-    d) Optimalizácia pre vyhľadávače (SEO)
+    d) Optimalizácia pre vyhľadávače (SEO]
     
 33. Aký je účel navrhovania názvov a inventáru v IA?  
     a) Uľahčiť komunikáciu a navigáciu používateľom  
@@ -227,7 +227,7 @@
     c) Počas celého procesu navrhovania  
     d) Po dokončení všetkých funkcií aplikácie
     
-39. Čo je hlavnou výhodou vytvárania používateľských scenárov (User scenarios)?  
+39. Čo je hlavnou výhodou vytvárania používateľských scenárov (User scenarios]?  
     a) Zlepšiť výkon aplikácie  
     b) Pochopiť, čo používatelia robia a potrebujú  
     c) Zistiť, ktoré funkcie aplikácie sú najdôležitejšie  
@@ -252,7 +252,7 @@
     c) Získať spätnú väzbu od vývojárov  
     d) Zlepšiť výkon aplikácie
     
-43. Prečo je dôležité vytvoriť Low Fidelity (Lo-Fi) prototyp?  
+43. Prečo je dôležité vytvoriť Low Fidelity (Lo-Fi] prototyp?  
     a) Na prezentovanie finálneho dizajnu  
     b) Na testovanie finálnych funkcií  
     c) Na rýchle prezentovanie nápadov a brainstormingu  
@@ -564,7 +564,7 @@
     c) Typ obsahu  
     d) Rozlíšenie obrazovky
     
-95. Aké zručnosti sa znižujú u seniorov (65+) v porovnaní s mladšími používateľmi?  
+95. Aké zručnosti sa znižujú u seniorov (65+] v porovnaní s mladšími používateľmi?  
     a) Kognitívne schopnosti, pamäť, rýchlosť učenia  
     b) Motorika, zrak, pozornosť  
     c) Sluch a orientácia v priestore  
@@ -594,7 +594,7 @@
     c) Zabezpečenie prístupných textov, vysokého kontrastu a jednoduchej navigácie  
     d) Ignorovanie rozdielov medzi rôznymi vekovými skupinami
     
-100. Aký je cieľ EAA (European Accessibility Act) v oblasti prístupnosti?  
+100. Aký je cieľ EAA (European Accessibility Act] v oblasti prístupnosti?  
     a) Zabezpečiť prístupnosť len pre veľké firmy  
     b) Predpisovať technológie pre digitálne produkty určené na predaj v EÚ  
     c) Zaručiť prístupnosť pre všetky digitálne produkty určené zákazníkom v EÚ  
@@ -613,10 +613,10 @@
     d) Z prírodných zákonov
     
 103. Ktorá z týchto revolúcií nie je jednou z priemyselných revolúcií?  
-    a) Mechanizácia výroby (vodná a parná energia)  
-    b) Masová výroba (elektrická energia)  
-    c) Automatizovaná výroba (elektronika a IT)  
-    d) Technologická revolúcia (umelá inteligencia)
+    a) Mechanizácia výroby (vodná a parná energia]  
+    b) Masová výroba (elektrická energia]  
+    c) Automatizovaná výroba (elektronika a IT]  
+    d) Technologická revolúcia (umelá inteligencia]
     
 104. Aký je cieľ dizajnu podľa Herberta Simona?  
     a) Prispôsobiť existujúce situácie novým technológiám  

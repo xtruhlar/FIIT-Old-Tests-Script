@@ -163,7 +163,7 @@
 	c) Creating Personas
 	d) Testing
 
-25. Attributes of the product r service provides the same level of reachability of online information and services no matter the physical or mental abilities or disorders of the user is called:
+25. Attributes of the product or service provides the same level of reachability of online information and services no matter the physical or mental abilities or disorders of the user is called:
 	a) Generalization
 	b) Learnability
 	c) Multiplatformity
@@ -191,6 +191,7 @@
 	c) Usability testing
 	d) Storage-based connection proposal
 	e) Contextual interviews
+	f) Professional audit
 
 30. Decide on the correctness of the following statements about prototyping
 	a) Prototypes are mede only by graphic designers to choose the right colors and fonts
